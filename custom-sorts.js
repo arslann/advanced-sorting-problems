@@ -85,11 +85,19 @@ function ageSort(users) {
 
 
 function oddEvenSort(arr) {
-  // Fill this in
+
+  return arr.sort(oddEvenCompare)
 }
 
-function validAnagrams(s, t) {
-  // Fill this in
+function oddEvenCompare(a, b) {
+  if (a % 2 === 1 && b % 2 === 0) return -1;
+  if (a % 2 === 0 && b % 2 === 1) return 1;
+  return a - b;
+}
+
+
+function validAnagrams(s1, s2) {
+  return s1.split("").sort().join("") === s2.split("").sort().join("");
 }
 
 function reverseBaseSort(arr) {
@@ -103,7 +111,3 @@ function frequencySort(arr) {
 module.exports = [oddEvenSort, validAnagrams, reverseBaseSort,
   frequencySort, ageSort];
 
-
-let arr = [5, 4, 10, 1, 8, 3, 6, 2, 22, 18, 0, 50, 48]
-
-console.log(mergesort(arr))
